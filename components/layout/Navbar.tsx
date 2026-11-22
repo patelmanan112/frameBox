@@ -3,7 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Clapperboard, Film, Menu, Search, Tv, X } from "lucide-react";
+import {
+  Bookmark,
+  Film,
+  Menu,
+  Search,
+  Tv,
+  X,
+} from "lucide-react";
+import Logo from "@/components/ui/Logo";
 import type { SearchItem } from "@/types";
 
 const links = [
@@ -21,12 +29,34 @@ export default function Navbar({ items }: { items: SearchItem[] }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [watchlistCount, setWatchlistCount] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 15);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const updateCount = () => {
+      try {
+        const saved =
+          localStorage.getItem("framebox_watchlist") ||
+          localStorage.getItem("cineverse_watchlist");
+        if (saved) setWatchlistCount(JSON.parse(saved).length);
+        else setWatchlistCount(0);
+      } catch {
+        // ignore
+      }
+    };
+    updateCount();
+    window.addEventListener("storage", updateCount);
+    const interval = setInterval(updateCount, 2000);
+    return () => {
+      window.removeEventListener("storage", updateCount);
+      clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {
@@ -37,6 +67,10 @@ export default function Navbar({ items }: { items: SearchItem[] }) {
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setSearchOpen((prev) => !prev);
+      }
       if (event.key === "Escape") {
         setSearchOpen(false);
         setMobileOpen(false);
@@ -61,7 +95,7 @@ export default function Navbar({ items }: { items: SearchItem[] }) {
   const results = trimmed
     ? items
         .filter((item) => item.title.toLowerCase().includes(trimmed))
-        .slice(0, 6)
+        .slice(0, 8)
     : [];
 
   const closeSearch = () => {
@@ -83,153 +117,142 @@ export default function Navbar({ items }: { items: SearchItem[] }) {
   };
 
   return (
-    <header className={`navbar ${scrolled ? "is-scrolled" : ""}`}>
-      <div className="container nav-inner">
-        <Link
-          href="/"
-          className="nav-logo"
-          aria-label="Cineverse home"
-          onClick={closeMenus}
-        >
-          <Clapperboard size={22} strokeWidth={1.6} aria-hidden="true" />
-          CINEVERSE
-        </Link>
+    <header className={`stream-navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className="container stream-nav-content">
+        <div className="stream-nav-left">
+          <Link
+            href="/"
+            className="stream-logo"
+            aria-label="FrameBox home"
+            onClick={closeMenus}
+          >
+            <Logo size="md" />
+          </Link>
 
-        <nav className="nav-links" aria-label="Primary">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`nav-link ${isActive(link.href) ? "active" : ""}`}
-              onClick={closeMenus}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+          <nav className="stream-nav-menu" aria-label="Main Navigation">
+            {links.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`stream-nav-item ${active ? "active" : ""}`}
+                  onClick={closeMenus}
+                >
+                  <span>{link.label}</span>
+                  {active && <span className="stream-nav-indicator" />}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
 
-        <div className="nav-actions">
+        <div className="stream-nav-right">
           <button
             type="button"
-            className="icon-btn"
-            aria-label={searchOpen ? "Close search" : "Search Cineverse"}
-            aria-expanded={searchOpen}
+            className="stream-search-trigger"
+            aria-label="Search"
             onClick={() => {
-              setSearchOpen((open) => !open);
+              setSearchOpen((prev) => !prev);
               setMobileOpen(false);
             }}
           >
-            {searchOpen ? (
-              <X size={18} aria-hidden="true" />
-            ) : (
-              <Search size={18} aria-hidden="true" />
-            )}
+            <Search size={15} />
+            <span className="stream-search-placeholder">Search films, series...</span>
+            <kbd className="stream-search-shortcut">⌘K</kbd>
           </button>
+
+          {watchlistCount > 0 && (
+            <Link
+              href="/movies"
+              className="stream-watchlist-btn"
+              title={`${watchlistCount} titles saved in watchlist`}
+            >
+              <Bookmark size={15} className="text-brand" fill="currentColor" />
+              <span>{watchlistCount}</span>
+            </Link>
+          )}
 
           <button
             type="button"
-            className="btn btn-ghost btn-sm nav-signin"
-            title="Sign in to Cineverse"
-          >
-            Sign In
-          </button>
-
-          <button
-            type="button"
-            className="icon-btn mobile-toggle"
+            className="stream-mobile-toggle"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
             onClick={() => {
-              setMobileOpen((open) => !open);
+              setMobileOpen((prev) => !prev);
               setSearchOpen(false);
             }}
           >
-            {mobileOpen ? (
-              <X size={18} aria-hidden="true" />
-            ) : (
-              <Menu size={18} aria-hidden="true" />
-            )}
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {searchOpen ? (
-        <div className="search-panel">
+      {searchOpen && (
+        <div className="stream-search-dropdown-overlay">
           <div className="container">
-            <form className="search-field" onSubmit={onSubmit}>
-              <Search size={20} aria-hidden="true" />
+            <form className="stream-search-input-wrap" onSubmit={onSubmit}>
+              <Search size={18} className="text-muted" />
               <input
                 ref={inputRef}
                 type="search"
                 value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Search films and series"
-                aria-label="Search films and series"
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search by title, director, genre or actor..."
+                aria-label="Search FrameBox"
               />
               <button
                 type="button"
-                className="icon-btn"
-                aria-label="Close search"
+                className="stream-search-close"
                 onClick={closeSearch}
+                aria-label="Close search"
               >
-                <X size={16} aria-hidden="true" />
+                <X size={18} />
               </button>
             </form>
 
-            {trimmed ? (
-              results.length > 0 ? (
-                <div className="search-results">
-                  {results.map((item) => (
+            {trimmed && (
+              <div className="stream-search-results-panel">
+                {results.length > 0 ? (
+                  results.map((item) => (
                     <Link
                       key={`${item.type}-${item.id}`}
                       href={`/${item.type === "movie" ? "movies" : "series"}/${item.id}`}
-                      className="search-result"
+                      className="stream-search-result-row"
                       onClick={closeSearch}
                     >
-                      {item.type === "movie" ? (
-                        <Film size={16} aria-hidden="true" />
-                      ) : (
-                        <Tv size={16} aria-hidden="true" />
-                      )}
-                      <span className="search-result-title">{item.title}</span>
-                      <span className="search-result-year">{item.year}</span>
-                      <span className="search-result-type">
-                        {item.type === "movie" ? "Film" : "Series"}
+                      <span className="stream-search-type-badge">
+                        {item.type === "movie" ? <Film size={14} /> : <Tv size={14} />}
+                        {item.type}
                       </span>
+                      <span className="stream-search-result-title">{item.title}</span>
+                      <span className="stream-search-result-year">{item.year}</span>
                     </Link>
-                  ))}
-                </div>
-              ) : (
-                <p className="search-empty">
-                  Nothing matched “{query.trim()}”. Try another title.
-                </p>
-              )
-            ) : (
-              <p className="search-hint">
-                Search across {items.length} films and series in the collection.
-              </p>
+                  ))
+                ) : (
+                  <div className="stream-search-no-results">
+                    No results for &ldquo;{query}&rdquo;
+                  </div>
+                )}
+              </div>
             )}
           </div>
         </div>
-      ) : null}
+      )}
 
-      {mobileOpen ? (
-        <nav className="mobile-menu" aria-label="Mobile">
+      {mobileOpen && (
+        <nav className="stream-mobile-menu">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`mobile-link ${isActive(link.href) ? "active" : ""}`}
+              className={`stream-mobile-menu-item ${isActive(link.href) ? "active" : ""}`}
               onClick={closeMenus}
             >
               {link.label}
             </Link>
           ))}
-          <Link href="/" className="mobile-link" onClick={closeMenus}>
-            Home
-          </Link>
         </nav>
-      ) : null}
+      )}
     </header>
   );
 }

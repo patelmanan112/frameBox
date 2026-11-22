@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Tv } from "lucide-react";
 import SeriesDetailHero from "@/components/series/SeriesDetailHero";
 import CastGrid from "@/components/movie/CastGrid";
-import ReviewsList from "@/components/movie/ReviewsList";
+import ReviewSection from "@/components/movie/MovieReviewSection";
 import {
   getAllSeries,
   getReviewsForContent,
@@ -74,26 +74,13 @@ export default async function SeriesDetailPage({ params }: SeriesPageProps) {
             </section>
 
             <section className="detail-section" id="reviews">
-              <div className="section-head">
-                <div>
-                  <h2 className="detail-heading" style={{ marginBottom: 0 }}>
-                    Reviews
-                  </h2>
-                  <p className="section-sub">
-                    {reviews.length} {reviews.length === 1 ? "review" : "reviews"}{" "}
-                    · average {series.rating.toFixed(1)} / 10
-                  </p>
-                </div>
-              </div>
-
-              <div className="write-review" style={{ marginBottom: 18 }}>
-                <span>Have a take on {series.title}?</span>
-                <button type="button" className="btn btn-ghost btn-sm">
-                  Write a review
-                </button>
-              </div>
-
-              <ReviewsList reviews={reviews} />
+              <ReviewSection
+                initialReviews={reviews}
+                contentId={series._id}
+                contentTitle={series.title}
+                contentType="series"
+                averageRating={series.rating}
+              />
             </section>
           </div>
 

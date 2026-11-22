@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import HeroCarousel from "@/components/home/HeroCarousel";
 import HorizontalScroll from "@/components/home/HorizontalScroll";
 import TopTenList from "@/components/home/TopTenList";
@@ -13,7 +13,6 @@ import {
   getGenrePoster,
   getMovieById,
   getTopTenMovies,
-  getTopTenSeries,
 } from "@/lib/data";
 
 export default function HomePage() {
@@ -23,7 +22,6 @@ export default function HomePage() {
     .slice(0, 5);
   const trending = [...allMovies].sort((a, b) => b.rating - a.rating);
   const topMovies = getTopTenMovies();
-  const topSeries = getTopTenSeries();
   const featured = getMovieById("movie_001") ?? topMovies[0];
 
   const genres: GenreSummary[] = getAllGenres()
@@ -41,9 +39,9 @@ export default function HomePage() {
 
       <HorizontalScroll
         title="Trending Now"
-        subtitle="The films everyone is talking about this week."
+        subtitle="The most-watched and highest-rated titles this week."
         href="/movies"
-        linkLabel="All films"
+        linkLabel="Explore all"
       >
         {trending.map((movie) => (
           <MovieCard key={movie._id} movie={movie} />
@@ -51,19 +49,11 @@ export default function HomePage() {
       </HorizontalScroll>
 
       <TopTenList
-        title="Top Ten Films"
-        subtitle="Ranked by our editorial score and reader response."
+        title="Top 10 Movies Today"
+        subtitle="Ranked by critical acclaim, reader score, and streaming demand."
         href="/top-rated?type=movie"
         items={topMovies}
         type="movie"
-      />
-
-      <TopTenList
-        title="Top Ten Series"
-        subtitle="The best episodic storytelling, from limited runs to long-form drama."
-        href="/top-rated?type=series"
-        items={topSeries}
-        type="series"
       />
 
       <FeaturedEditorial movie={featured} />
@@ -72,9 +62,13 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head">
             <div>
-              <h2 className="section-title">Browse by Genre</h2>
+              <div className="section-eyebrow">
+                <Sparkles size={14} className="text-brand" />
+                <span>CATEGORIES</span>
+              </div>
+              <h2 className="section-title">Explore Genres</h2>
               <p className="section-sub">
-                Find your next watch by mood, movement, or mode.
+                Find your next watch across sci-fi, drama, action, and animation.
               </p>
             </div>
             <Link href="/genres" className="section-link">

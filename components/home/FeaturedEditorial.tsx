@@ -1,71 +1,104 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Sparkles, Star } from "lucide-react";
+import TrailerModal from "@/components/ui/TrailerModal";
 import type { Movie } from "@/types";
 
 export default function FeaturedEditorial({ movie }: { movie: Movie }) {
+  const [showTrailer, setShowTrailer] = useState(false);
+
   return (
-    <section className="section">
-      <div className="container">
-        <div className="featured">
-          <div className="featured-media">
-            <Image
-              src={movie.posterUrl}
-              alt={`${movie.title} poster`}
-              fill
-              sizes="(max-width: 1100px) 100vw, 45vw"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-
-          <div className="featured-body">
-            <p className="featured-kicker">Editor&apos;s Pick</p>
-            <h2 className="featured-title">{movie.title}</h2>
-            <p className="featured-text">{movie.longDescription}</p>
-
-            <div className="featured-cast">
-              {movie.cast.slice(0, 3).map((member) => (
-                <div key={member.actorId} className="featured-cast-item">
-                  <span className="featured-avatar">
-                    <Image
-                      src={member.imageUrl}
-                      alt={member.name}
-                      fill
-                      sizes="40px"
-                      style={{ objectFit: "cover" }}
-                    />
-                  </span>
-                  <span>
-                    <span className="featured-cast-name">{member.name}</span>
-                    <span className="featured-cast-role" style={{ display: "block" }}>
-                      {member.role}
-                    </span>
-                  </span>
-                </div>
-              ))}
+    <>
+      <section className="section spotlight-section">
+        <div className="container">
+          <div className="spotlight-card">
+            <div className="spotlight-bg">
+              <Image
+                src={movie.backdropUrl || movie.posterUrl}
+                alt={movie.title}
+                fill
+                sizes="(max-width: 1200px) 100vw, 1300px"
+                style={{ objectFit: "cover", objectPosition: "center 25%" }}
+              />
+              <div className="spotlight-shade-left" />
+              <div className="spotlight-shade-bottom" />
             </div>
 
-            <div className="hero-actions">
-              <Link
-                href={`/movies/${movie._id}#reviews`}
-                className="btn btn-gold"
-              >
-                Read the review
-                <ArrowRight size={16} aria-hidden="true" />
-              </Link>
-              <a
-                href={movie.trailerUrl}
-                className="btn btn-ghost"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Play size={16} fill="currentColor" aria-hidden="true" />
-                Watch trailer
-              </a>
+            <div className="spotlight-content">
+              <div className="spotlight-tag">
+                <Sparkles size={13} className="text-brand" />
+                <span>SPOTLIGHT OF THE MONTH</span>
+              </div>
+
+              <h2 className="spotlight-title">{movie.title}</h2>
+
+              <div className="spotlight-meta">
+                <span className="spotlight-score">
+                  <Star size={12} fill="currentColor" />
+                  {movie.rating.toFixed(1)} Rating
+                </span>
+                <span>{movie.year}</span>
+                <span>•</span>
+                <span>{movie.runtime} min</span>
+                <span>•</span>
+                <span>Directed by {movie.director}</span>
+              </div>
+
+              <p className="spotlight-text">{movie.longDescription}</p>
+
+              <div className="spotlight-cast-row">
+                <span className="spotlight-cast-label">Starring:</span>
+                <div className="spotlight-cast-avatars">
+                  {movie.cast.slice(0, 3).map((member) => (
+                    <div key={member.actorId} className="spotlight-cast-item">
+                      <div className="spotlight-avatar">
+                        <Image
+                          src={member.imageUrl}
+                          alt={member.name}
+                          fill
+                          sizes="36px"
+                          style={{ objectFit: "cover" }}
+                        />
+                      </div>
+                      <span className="spotlight-cast-name">{member.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="spotlight-actions">
+                <button
+                  type="button"
+                  className="btn-play-primary"
+                  onClick={() => setShowTrailer(true)}
+                >
+                  <Play size={18} fill="currentColor" />
+                  Watch Trailer
+                </button>
+                <Link
+                  href={`/movies/${movie._id}`}
+                  className="btn-hero-glass"
+                >
+                  Full Coverage
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {showTrailer && (
+        <TrailerModal
+          isOpen={true}
+          onClose={() => setShowTrailer(false)}
+          trailerUrl={movie.trailerUrl}
+          title={movie.title}
+        />
+      )}
+    </>
   );
 }

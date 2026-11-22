@@ -10,7 +10,7 @@ export default function NotFound() {
           The page you are looking for is not in the final edit.
         </p>
         <Link href="/" className="btn btn-gold">
-          Back to Cineverse
+          Back to FrameBox
         </Link>
       </div>
     </div>

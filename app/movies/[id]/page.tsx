@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Tv } from "lucide-react";
 import MovieDetailHero from "@/components/movie/MovieDetailHero";
 import CastGrid from "@/components/movie/CastGrid";
-import ReviewsList from "@/components/movie/ReviewsList";
+import MovieReviewSection from "@/components/movie/MovieReviewSection";
 import {
   getAllMovies,
   getMovieById,
@@ -74,26 +74,13 @@ export default async function MovieDetailPage({ params }: MoviePageProps) {
             </section>
 
             <section className="detail-section" id="reviews">
-              <div className="section-head">
-                <div>
-                  <h2 className="detail-heading" style={{ marginBottom: 0 }}>
-                    Reviews
-                  </h2>
-                  <p className="section-sub">
-                    {reviews.length} {reviews.length === 1 ? "review" : "reviews"}{" "}
-                    · average {movie.rating.toFixed(1)} / 10
-                  </p>
-                </div>
-              </div>
-
-              <div className="write-review" style={{ marginBottom: 18 }}>
-                <span>Have a take on {movie.title}?</span>
-                <button type="button" className="btn btn-ghost btn-sm">
-                  Write a review
-                </button>
-              </div>
-
-              <ReviewsList reviews={reviews} />
+              <MovieReviewSection
+                initialReviews={reviews}
+                contentId={movie._id}
+                contentTitle={movie.title}
+                contentType="movie"
+                averageRating={movie.rating}
+              />
             </section>
           </div>
 

@@ -1,376 +1,482 @@
 [
-    {
-        "_id":  "movie_001",
-        "title":  "Oppenheimer",
-        "year":  2023,
-        "director":  "Christopher Nolan",
-        "genre":  [
-                      "Drama",
-                      "Biography",
-                      "History"
-                  ],
-        "runtime":  180,
-        "rating":  8.9,
-        "language":  "English",
-        "description":  "The story of J. Robert Oppenheimer and the development of the atomic bomb during World War II.",
-        "longDescription":  "A gripping biographical thriller that chronicles the theoretical physicist who led the Manhattan Project. Nolan orchestrates the narrative across three timelines with IMAX-scale precision, delivering a film that is both spectacle and moral reckoning.",
-        "posterUrl":  "/images/posters/movie_001.jpg",
-        "backdropUrl":  "/images/backdrops/movie_001.jpg",
-        "trailerUrl":  "https://www.youtube.com/watch?v=uYPbbksJxIg",
-        "cast":  [
-                     {
-                         "actorId":  "actor_001",
-                         "name":  "Cillian Murphy",
-                         "role":  "J. Robert Oppenheimer",
-                         "imageUrl":  "/images/cast/actor_001.jpg"
-                     },
-                     {
-                         "actorId":  "actor_002",
-                         "name":  "Emily Blunt",
-                         "role":  "Katherine Oppenheimer",
-                         "imageUrl":  "/images/cast/actor_002.jpg"
-                     },
-                     {
-                         "actorId":  "actor_003",
-                         "name":  "Matt Damon",
-                         "role":  "General Leslie Groves",
-                         "imageUrl":  "/images/cast/actor_003.jpg"
-                     }
-                 ],
-        "streamingOn":  [
-                            "Peacock"
-                        ],
-        "isTopTen":  true,
-        "topTenRank":  1,
-        "reviewCount":  2847,
-        "createdAt":  "2024-01-01T00:00:00Z"
-    },
-    {
-        "_id":  "movie_002",
-        "title":  "Dune: Part Two",
-        "year":  2024,
-        "director":  "Denis Villeneuve",
-        "genre":  [
-                      "Sci-Fi",
-                      "Adventure",
-                      "Drama"
-                  ],
-        "runtime":  166,
-        "rating":  8.6,
-        "language":  "English",
-        "description":  "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
-        "longDescription":  "Denis Villeneuve delivers a visually breathtaking continuation of the Dune saga. Where Part One was an overture, Part Two is the full symphony Ã¢â‚¬â€ operatic in scale, intimate in character, and genuinely awe-inspiring in its desert cinematography.",
-        "posterUrl":  "/images/posters/movie_002.jpg",
-        "backdropUrl":  "/images/backdrops/movie_002.jpg",
-        "trailerUrl":  "https://www.youtube.com/watch?v=Way9Dexny3w",
-        "cast":  [
-                     {
-                         "actorId":  "actor_004",
-                         "name":  "TimothÃƒÂ©e Chalamet",
-                         "role":  "Paul Atreides",
-                         "imageUrl":  "/images/cast/actor_004.jpg"
-                     },
-                     {
-                         "actorId":  "actor_005",
-                         "name":  "Zendaya",
-                         "role":  "Chani",
-                         "imageUrl":  "/images/cast/actor_005.jpg"
-                     },
-                     {
-                         "actorId":  "actor_006",
-                         "name":  "Austin Butler",
-                         "role":  "Feyd-Rautha",
-                         "imageUrl":  "/images/cast/actor_006.jpg"
-                     }
-                 ],
-        "streamingOn":  [
-                            "Max"
-                        ],
-        "isTopTen":  true,
-        "topTenRank":  2,
-        "reviewCount":  1923,
-        "createdAt":  "2024-01-02T00:00:00Z"
-    },
-    {
-        "_id":  "movie_003",
-        "title":  "Poor Things",
-        "year":  2023,
-        "director":  "Yorgos Lanthimos",
-        "genre":  [
-                      "Comedy",
-                      "Drama",
-                      "Fantasy"
-                  ],
-        "runtime":  141,
-        "rating":  8.3,
-        "language":  "English",
-        "description":  "The incredible tale of a young woman brought back to life by an unorthodox scientist.",
-        "longDescription":  "Yorgos Lanthimos crafts a visually arresting, intellectually provocative tale of a Frankenstein-esque resurrection. Emma Stone gives one of the decade\u0027s great performances as a woman discovering the world without the constraints of its expectations.",
-        "posterUrl":  "/images/posters/movie_003.jpg",
-        "backdropUrl":  "/images/backdrops/movie_003.jpg",
-        "trailerUrl":  "https://www.youtube.com/watch?v=RlbR5N6veqw",
-        "cast":  [
-                     {
-                         "actorId":  "actor_007",
-                         "name":  "Emma Stone",
-                         "role":  "Bella Baxter",
-                         "imageUrl":  "/images/cast/actor_007.jpg"
-                     },
-                     {
-                         "actorId":  "actor_007b",
-                         "name":  "Mark Ruffalo",
-                         "role":  "Duncan Wedderburn",
-                         "imageUrl":  "/images/cast/actor_007b.jpg"
-                     }
-                 ],
-        "streamingOn":  [
-                            "Hulu",
-                            "Disney+"
-                        ],
-        "isTopTen":  true,
-        "topTenRank":  3,
-        "reviewCount":  1456,
-        "createdAt":  "2024-01-03T00:00:00Z"
-    },
-    {
-        "_id":  "movie_004",
-        "title":  "Killers of the Flower Moon",
-        "year":  2023,
-        "director":  "Martin Scorsese",
-        "genre":  [
-                      "Crime",
-                      "Drama",
-                      "History"
-                  ],
-        "runtime":  206,
-        "rating":  8.0,
-        "language":  "English",
-        "description":  "Members of the Osage tribe are murdered under mysterious circumstances in 1920s Oklahoma.",
-        "longDescription":  "Martin Scorsese\u0027s magnum opus confronts America\u0027s darkest chapter through an intimate portrait of greed and betrayal. At 206 minutes, it demands patience, but it rewards with a devastating portrait of systemic evil wearing the face of love.",
-        "posterUrl":  "/images/posters/movie_004.jpg",
-        "backdropUrl":  "/images/backdrops/movie_004.jpg",
-        "trailerUrl":  "https://www.youtube.com/watch?v=EP34Yoxs3FQ",
-        "cast":  [
-                     {
-                         "actorId":  "actor_008",
-                         "name":  "Leonardo DiCaprio",
-                         "role":  "Ernest Burkhart",
-                         "imageUrl":  "/images/cast/actor_008.jpg"
-                     },
-                     {
-                         "actorId":  "actor_009",
-                         "name":  "Robert De Niro",
-                         "role":  "William Hale",
-                         "imageUrl":  "/images/cast/actor_009.jpg"
-                     }
-                 ],
-        "streamingOn":  [
-                            "Apple TV+"
-                        ],
-        "isTopTen":  true,
-        "topTenRank":  4,
-        "reviewCount":  2103,
-        "createdAt":  "2024-01-04T00:00:00Z"
-    },
-    {
-        "_id":  "movie_005",
-        "title":  "Saltburn",
-        "year":  2023,
-        "director":  "Emerald Fennell",
-        "genre":  [
-                      "Thriller",
-                      "Drama"
-                  ],
-        "runtime":  131,
-        "rating":  7.5,
-        "language":  "English",
-        "description":  "A student becomes obsessed with a charming and wealthy classmate and spends a summer at his eccentric family\u0027s estate.",
-        "longDescription":  "Emerald Fennell\u0027s razor-sharp class satire twists into something far darker as the summer progresses. Barry Keoghan turns in a performance of unnerving precision, anchoring a film that refuses to let its audience get comfortable.",
-        "posterUrl":  "/images/posters/movie_005.jpg",
-        "backdropUrl":  "/images/backdrops/movie_005.jpg",
-        "trailerUrl":  "https://www.youtube.com/watch?v=VSkqImgusRA",
-        "cast":  [
-                     {
-                         "actorId":  "actor_010",
-                         "name":  "Barry Keoghan",
-                         "role":  "Oliver Quick",
-                         "imageUrl":  "/images/cast/actor_010.jpg"
-                     }
-                 ],
-        "streamingOn":  [
-                            "Prime Video"
-                        ],
-        "isTopTen":  true,
-        "topTenRank":  5,
-        "reviewCount":  1789,
-        "createdAt":  "2024-01-05T00:00:00Z"
-    },
-    {
-        "_id":  "movie_006",
-        "title":  "Past Lives",
-        "year":  2023,
-        "director":  "Celine Song",
-        "genre":  [
-                      "Romance",
-                      "Drama"
-                  ],
-        "runtime":  106,
-        "rating":  8.1,
-        "language":  "English",
-        "description":  "Two childhood friends reunite after two decades apart and are forced to confront their complex feelings.",
-        "longDescription":  "A quietly devastating meditation on paths not taken. Celine Song\u0027s debut feature lingers long after the credits roll, achieving something rare: a film about the weight of unlived lives that never collapses into sentimentality.",
-        "posterUrl":  "/images/posters/movie_006.jpg",
-        "backdropUrl":  "/images/backdrops/movie_006.jpg",
-        "trailerUrl":  "https://www.youtube.com/watch?v=VfbWO9j_RvE",
-        "cast":  [
-                     {
-                         "actorId":  "actor_011",
-                         "name":  "Greta Lee",
-                         "role":  "Nora",
-                         "imageUrl":  "/images/cast/actor_011.jpg"
-                     }
-                 ],
-        "streamingOn":  [
-                            "Showtime"
-                        ],
-        "isTopTen":  true,
-        "topTenRank":  6,
-        "reviewCount":  987,
-        "createdAt":  "2024-01-06T00:00:00Z"
-    },
-    {
-        "_id":  "movie_007",
-        "title":  "The Zone of Interest",
-        "year":  2023,
-        "director":  "Jonathan Glazer",
-        "genre":  [
-                      "Drama",
-                      "War",
-                      "History"
-                  ],
-        "runtime":  105,
-        "rating":  7.8,
-        "language":  "German",
-        "description":  "The commandant of Auschwitz and his wife build their dream life in a house next to the camp.",
-        "longDescription":  "Jonathan Glazer\u0027s unflinching masterwork presents the banality of evil with chilling restraint. The horror is entirely in what we cannot see Ã¢â‚¬â€ a film that asks its audience to listen to what lies just beyond the garden wall.",
-        "posterUrl":  "/images/posters/movie_007.jpg",
-        "backdropUrl":  "/images/backdrops/movie_007.jpg",
-        "trailerUrl":  "https://www.youtube.com/watch?v=nNFGbnxwVUQ",
-        "cast":  [
-                     {
-                         "actorId":  "actor_014",
-                         "name":  "Christian Friedel",
-                         "role":  "Rudolf HÃƒÂ¶ss",
-                         "imageUrl":  "/images/cast/actor_014.jpg"
-                     }
-                 ],
-        "streamingOn":  [
-                            "MUBI"
-                        ],
-        "isTopTen":  true,
-        "topTenRank":  7,
-        "reviewCount":  1203,
-        "createdAt":  "2024-01-07T00:00:00Z"
-    },
-    {
-        "_id":  "movie_008",
-        "title":  "American Fiction",
-        "year":  2023,
-        "director":  "Cord Jefferson",
-        "genre":  [
-                      "Comedy",
-                      "Drama"
-                  ],
-        "runtime":  117,
-        "rating":  7.9,
-        "language":  "English",
-        "description":  "A frustrated novelist uses a pen name to satirize stereotypes, only for the book to become a massive hit.",
-        "longDescription":  "A biting satirical comedy about race, art, and authenticity in contemporary America. Jeffrey Wright carries the film with effortless authority, anchoring a sharp script that earns every laugh while never sacrificing its intelligence.",
-        "posterUrl":  "/images/posters/movie_008.jpg",
-        "backdropUrl":  "/images/backdrops/movie_008.jpg",
-        "trailerUrl":  "https://www.youtube.com/watch?v=AoQiLSJbL7A",
-        "cast":  [
-                     {
-                         "actorId":  "actor_015",
-                         "name":  "Jeffrey Wright",
-                         "role":  "Thelonious Monk Ellison",
-                         "imageUrl":  "/images/cast/actor_015.jpg"
-                     }
-                 ],
-        "streamingOn":  [
-                            "Prime Video"
-                        ],
-        "isTopTen":  true,
-        "topTenRank":  8,
-        "reviewCount":  1567,
-        "createdAt":  "2024-01-08T00:00:00Z"
-    },
-    {
-        "_id":  "movie_009",
-        "title":  "Maestro",
-        "year":  2023,
-        "director":  "Bradley Cooper",
-        "genre":  [
-                      "Biography",
-                      "Drama",
-                      "Music"
-                  ],
-        "runtime":  129,
-        "rating":  7.4,
-        "language":  "English",
-        "description":  "A towering and fearless look at the life and work of Leonard Bernstein.",
-        "longDescription":  "Bradley Cooper both directs and stars in this transformative biopic. The film is at its best in the quiet domestic scenes Ã¢â‚¬â€ a portrait of a marriage negotiating with genius on one side and obliteration on the other.",
-        "posterUrl":  "/images/posters/movie_009.jpg",
-        "backdropUrl":  "/images/backdrops/movie_009.jpg",
-        "trailerUrl":  "https://www.youtube.com/watch?v=2GHBl6NiNDg",
-        "cast":  [
-                     {
-                         "actorId":  "actor_013",
-                         "name":  "Bradley Cooper",
-                         "role":  "Leonard Bernstein",
-                         "imageUrl":  "/images/cast/actor_013.jpg"
-                     }
-                 ],
-        "streamingOn":  [
-                            "Netflix"
-                        ],
-        "isTopTen":  true,
-        "topTenRank":  9,
-        "reviewCount":  892,
-        "createdAt":  "2024-01-09T00:00:00Z"
-    },
-    {
-        "_id":  "movie_010",
-        "title":  "Priscilla",
-        "year":  2023,
-        "director":  "Sofia Coppola",
-        "genre":  [
-                      "Biography",
-                      "Drama",
-                      "Romance"
-                  ],
-        "runtime":  113,
-        "rating":  7.3,
-        "language":  "English",
-        "description":  "The life of Priscilla Presley from her first meeting with Elvis to her life inside Graceland.",
-        "longDescription":  "Sofia Coppola\u0027s intimate portrait of a young woman negotiating the overwhelming reality of life with Elvis. Shot with the director\u0027s signature dreamy visual restraint, Priscilla offers a compassionate counterpoint to the Elvis mythology.",
-        "posterUrl":  "/images/posters/movie_010.jpg",
-        "backdropUrl":  "/images/backdrops/movie_010.jpg",
-        "trailerUrl":  "https://www.youtube.com/watch?v=NqfL2jFHXBM",
-        "cast":  [
-                     {
-                         "actorId":  "actor_012",
-                         "name":  "Cailee Spaeny",
-                         "role":  "Priscilla Presley",
-                         "imageUrl":  "/images/cast/actor_012.jpg"
-                     }
-                 ],
-        "streamingOn":  [
-                            "Prime Video"
-                        ],
-        "isTopTen":  true,
-        "topTenRank":  10,
-        "reviewCount":  743,
-        "createdAt":  "2024-01-10T00:00:00Z"
-    }
+  {
+    "_id": "movie_001",
+    "title": "Interstellar",
+    "year": 2014,
+    "director": "Christopher Nolan",
+    "genre": ["Sci-Fi", "Adventure", "Drama"],
+    "runtime": 169,
+    "rating": 8.7,
+    "language": "English",
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "longDescription": "Christopher Nolan's metaphysical space odyssey pairs cosmic grandeur with the intimate ache of human love across light-years. Powered by Hans Zimmer's pipe organ score and Hoyte van Hoytema's 70mm cinematography, Interstellar is cinema operating at its most awe-inspiring magnitude.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK5VQsXEG.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+    "cast": [
+      {
+        "actorId": "actor_001",
+        "name": "Matthew McConaughey",
+        "role": "Joseph Cooper",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/eD1FzN967vFf4Y3x2Uqf32X4Y0.jpg"
+      },
+      {
+        "actorId": "actor_002",
+        "name": "Anne Hathaway",
+        "role": "Dr. Amelia Brand",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/tLelKoPNiyJCSEtQT0jZ9fPKeQ1.jpg"
+      },
+      {
+        "actorId": "actor_003",
+        "name": "Jessica Chastain",
+        "role": "Murphy Cooper",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/lodMzLKSdrbwwcEqZ5k9tBv0m3G.jpg"
+      }
+    ],
+    "streamingOn": ["Paramount+", "Prime Video"],
+    "isTopTen": true,
+    "topTenRank": 1,
+    "reviewCount": 4120,
+    "createdAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "_id": "movie_002",
+    "title": "Blade Runner 2049",
+    "year": 2017,
+    "director": "Denis Villeneuve",
+    "genre": ["Sci-Fi", "Mystery", "Action"],
+    "runtime": 164,
+    "rating": 8.0,
+    "language": "English",
+    "description": "Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard.",
+    "longDescription": "Denis Villeneuve and master cinematographer Roger Deakins construct an ethereal, neon-soaked neo-noir dystopia that matches the legendary original. Every single frame is an oil painting exploring identity, artificial souls, and memory.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/ilRyAZwNpHqGqfFhOQtkQkE19rG.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=gCcx85zbxz4",
+    "cast": [
+      {
+        "actorId": "actor_004",
+        "name": "Ryan Gosling",
+        "role": "Officer K",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/lyUyARrr5W6kE47aP7V747wYgX2.jpg"
+      },
+      {
+        "actorId": "actor_005",
+        "name": "Harrison Ford",
+        "role": "Rick Deckard",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/5M729C4wsRzP5F2v2W9nL7yL5Vb.jpg"
+      },
+      {
+        "actorId": "actor_006",
+        "name": "Ana de Armas",
+        "role": "Joi",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/14uxt0j9p49P3L7YhD4iFm3Wf9d.jpg"
+      }
+    ],
+    "streamingOn": ["Max", "Hulu"],
+    "isTopTen": true,
+    "topTenRank": 2,
+    "reviewCount": 3840,
+    "createdAt": "2024-01-02T00:00:00Z"
+  },
+  {
+    "_id": "movie_003",
+    "title": "Inception",
+    "year": 2010,
+    "director": "Christopher Nolan",
+    "genre": ["Action", "Sci-Fi", "Thriller"],
+    "runtime": 148,
+    "rating": 8.8,
+    "language": "English",
+    "description": "A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+    "longDescription": "A dazzling puzzle-box blockbuster that turned subconscious architecture into high-stakes heist cinema. With its folding Parisian streets, zero-gravity hotel corridor fights, and haunting spinning totem, Inception remains the gold standard of cerebral action cinema.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=YoHD9XEInc0",
+    "cast": [
+      {
+        "actorId": "actor_007",
+        "name": "Leonardo DiCaprio",
+        "role": "Dom Cobb",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/wo2hJpn04vbtmh0B9utCFdsQ2v9.jpg"
+      },
+      {
+        "actorId": "actor_008",
+        "name": "Joseph Gordon-Levitt",
+        "role": "Arthur",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/4t3L2t394PqB4o6FkQ8V9q7N3gK.jpg"
+      },
+      {
+        "actorId": "actor_009",
+        "name": "Elliot Page",
+        "role": "Ariadne",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/tp1P1V5t0W09f98V5e3d7m9u3P.jpg"
+      }
+    ],
+    "streamingOn": ["Max", "Prime Video"],
+    "isTopTen": true,
+    "topTenRank": 3,
+    "reviewCount": 4950,
+    "createdAt": "2024-01-03T00:00:00Z"
+  },
+  {
+    "_id": "movie_004",
+    "title": "Parasite",
+    "year": 2019,
+    "director": "Bong Joon-ho",
+    "genre": ["Drama", "Thriller", "Comedy"],
+    "runtime": 132,
+    "rating": 8.5,
+    "language": "Korean",
+    "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+    "longDescription": "A razor-sharp social satire and pitch-black thriller that made history as the first non-English Best Picture winner. Bong Joon-ho orchestrates every camera movement and spatial dynamic inside the architectural marvel of the Park residence with terrifying grace.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/hiKmpFcDHioTNjH8x4bY5rT3Xh5.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=5xH0RzeSojI",
+    "cast": [
+      {
+        "actorId": "actor_010",
+        "name": "Song Kang-ho",
+        "role": "Kim Ki-taek",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/dyhp96x06aM6m0d6kG0eD9Zq3eL.jpg"
+      },
+      {
+        "actorId": "actor_011",
+        "name": "Lee Sun-kyun",
+        "role": "Park Dong-ik",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/8dK1n6d4p8p9m0e7q3d8d6k3m.jpg"
+      },
+      {
+        "actorId": "actor_012",
+        "name": "Cho Yeo-jeong",
+        "role": "Choi Yeon-gyo",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/j7y0P03487tF5q6l7t0d9e8z.jpg"
+      }
+    ],
+    "streamingOn": ["Max", "Hulu"],
+    "isTopTen": true,
+    "topTenRank": 4,
+    "reviewCount": 3200,
+    "createdAt": "2024-01-04T00:00:00Z"
+  },
+  {
+    "_id": "movie_005",
+    "title": "The Dark Knight",
+    "year": 2008,
+    "director": "Christopher Nolan",
+    "genre": ["Action", "Crime", "Drama"],
+    "runtime": 152,
+    "rating": 9.0,
+    "language": "English",
+    "description": "When the menace known as the Joker wreaks havoc and chaos on Gotham, Batman must accept one of the greatest psychological and physical tests.",
+    "longDescription": "Widely regarded as the pinnacle of modern crime epics, The Dark Knight is a relentless exploration of chaos and morality. Heath Ledger's anarchic, Oscar-winning portrayal of the Joker redefined villainy in contemporary cinematic folklore.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/dqK9Hag1054tghRQSqLSfrkvQnA.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=EXeTwQWrcwY",
+    "cast": [
+      {
+        "actorId": "actor_013",
+        "name": "Christian Bale",
+        "role": "Bruce Wayne / Batman",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/b7fTC9WFkgq6O87OGKQph0VHQcw.jpg"
+      },
+      {
+        "actorId": "actor_014",
+        "name": "Heath Ledger",
+        "role": "The Joker",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/5Y9HnYYa9jF4D9F9N47h5m0Y2L.jpg"
+      },
+      {
+        "actorId": "actor_015",
+        "name": "Gary Oldman",
+        "role": "James Gordon",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/2v9FsVq4nvPy4FDVq27m1K98Z6b.jpg"
+      }
+    ],
+    "streamingOn": ["Max"],
+    "isTopTen": true,
+    "topTenRank": 5,
+    "reviewCount": 5210,
+    "createdAt": "2024-01-05T00:00:00Z"
+  },
+  {
+    "_id": "movie_006",
+    "title": "Spider-Man: Across the Spider-Verse",
+    "year": 2023,
+    "director": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
+    "genre": ["Animation", "Action", "Sci-Fi"],
+    "runtime": 140,
+    "rating": 8.6,
+    "language": "English",
+    "description": "Miles Morales catapults across the Multiverse, encountering a society of Spider-People charged with protecting its very existence.",
+    "longDescription": "An ecstatic explosion of visual artistry that shatters every convention of modern animation. Merging comic book dot printing, watercolor expressionism, cyberpunk sketch-art, and Indian street art, Spider-Verse is a breathtaking sensory triumph.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/4HodYYKEIsGOdinkGi2Ucz6X9i0.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=cqGjhVJWtEg",
+    "cast": [
+      {
+        "actorId": "actor_016",
+        "name": "Shameik Moore",
+        "role": "Miles Morales",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/u6mG3X3K4n3J9v0P8t6f4l3h.jpg"
+      },
+      {
+        "actorId": "actor_017",
+        "name": "Hailee Steinfeld",
+        "role": "Gwen Stacy",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/bL6hM0X3f6k9v0P8t6f4l3h.jpg"
+      },
+      {
+        "actorId": "actor_018",
+        "name": "Oscar Isaac",
+        "role": "Miguel O'Hara",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/cP5v4P8v9k8v7f6d5s4a3z2x.jpg"
+      }
+    ],
+    "streamingOn": ["Netflix"],
+    "isTopTen": true,
+    "topTenRank": 6,
+    "reviewCount": 3670,
+    "createdAt": "2024-01-06T00:00:00Z"
+  },
+  {
+    "_id": "movie_007",
+    "title": "Whiplash",
+    "year": 2014,
+    "director": "Damien Chazelle",
+    "genre": ["Drama", "Music"],
+    "runtime": 106,
+    "rating": 8.5,
+    "language": "English",
+    "description": "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who stops at nothing.",
+    "longDescription": "A psychological thriller disguised as a music drama. Andrew Neiman's bloodied drumsticks and Terence Fletcher's volcanic fury make the rehearsal rooms of the Schaffer Conservatory feel more volatile than a battlefield.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/6bbZ6XyvgfjhCzjEN07RgEZvFnd.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=7d_jQycdQGo",
+    "cast": [
+      {
+        "actorId": "actor_019",
+        "name": "Miles Teller",
+        "role": "Andrew Neiman",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/cg3LW0x5w3a6b8c9d0e1f2.jpg"
+      },
+      {
+        "actorId": "actor_020",
+        "name": "J.K. Simmons",
+        "role": "Terence Fletcher",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/7Mgp9Q8x9v0a1b2c3d4e5f.jpg"
+      },
+      {
+        "actorId": "actor_021",
+        "name": "Paul Reiser",
+        "role": "Jim Neiman",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/k8l9m0n1o2p3q4r5s6t7u.jpg"
+      }
+    ],
+    "streamingOn": ["Netflix", "Paramount+"],
+    "isTopTen": true,
+    "topTenRank": 7,
+    "reviewCount": 2980,
+    "createdAt": "2024-01-07T00:00:00Z"
+  },
+  {
+    "_id": "movie_008",
+    "title": "Everything Everywhere All at Once",
+    "year": 2022,
+    "director": "Daniel Kwan, Daniel Scheinert",
+    "genre": ["Sci-Fi", "Adventure", "Comedy"],
+    "runtime": 139,
+    "rating": 8.7,
+    "language": "English",
+    "description": "A middle-aged Chinese immigrant is swept up into an insane adventure in which she alone can save existence by exploring alternate universes.",
+    "longDescription": "The Daniels channel internet absurdity, existential dread, martial arts mayhem, and deeply moving familial reconciliation into an anarchic masterpiece. Michelle Yeoh and Ke Huy Quan deliver career-defining emotional tours de force.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/fIwiFha3WPu5nHkBeMQ4GzEk0Hv.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=wxN1T1uxQ2g",
+    "cast": [
+      {
+        "actorId": "actor_022",
+        "name": "Michelle Yeoh",
+        "role": "Evelyn Wang",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/pW7V9u0s1r2q3p4o5n6m7.jpg"
+      },
+      {
+        "actorId": "actor_023",
+        "name": "Ke Huy Quan",
+        "role": "Waymond Wang",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/z1y2x3w4v5u6t7s8r9q0p.jpg"
+      },
+      {
+        "actorId": "actor_024",
+        "name": "Stephanie Hsu",
+        "role": "Joy Wang / Jobu Tupaki",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/a1b2c3d4e5f6g7h8i9j0k.jpg"
+      }
+    ],
+    "streamingOn": ["Netflix", "Paramount+"],
+    "isTopTen": true,
+    "topTenRank": 8,
+    "reviewCount": 3450,
+    "createdAt": "2024-01-08T00:00:00Z"
+  },
+  {
+    "_id": "movie_009",
+    "title": "The Batman",
+    "year": 2022,
+    "director": "Matt Reeves",
+    "genre": ["Action", "Crime", "Mystery"],
+    "runtime": 176,
+    "rating": 7.8,
+    "language": "English",
+    "description": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
+    "longDescription": "Matt Reeves strips the Caped Crusader down to a rain-soaked, gritty Fincher-style detective thriller. Greig Fraser's shadow-drenched amber cinematography and Michael Giacchino's ominous four-note motif turn Gotham into a suffocating, atmospheric nightmare.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/tRS6jvPM9qPrrnx2KRx3ew96Yot.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=mqqft2x_Aa4",
+    "cast": [
+      {
+        "actorId": "actor_025",
+        "name": "Robert Pattinson",
+        "role": "Bruce Wayne / Batman",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/8A4fkP9773b4e5f6g7h8.jpg"
+      },
+      {
+        "actorId": "actor_026",
+        "name": "Zoë Kravitz",
+        "role": "Selina Kyle / Catwoman",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/1a2b3c4d5e6f7g8h9i0j.jpg"
+      },
+      {
+        "actorId": "actor_027",
+        "name": "Paul Dano",
+        "role": "Edward Nashton / Riddler",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/9z8y7x6w5v4u3t2s1r0q.jpg"
+      }
+    ],
+    "streamingOn": ["Max"],
+    "isTopTen": true,
+    "topTenRank": 9,
+    "reviewCount": 2890,
+    "createdAt": "2024-01-09T00:00:00Z"
+  },
+  {
+    "_id": "movie_010",
+    "title": "The Grand Budapest Hotel",
+    "year": 2014,
+    "director": "Wes Anderson",
+    "genre": ["Comedy", "Adventure", "Crime"],
+    "runtime": 99,
+    "rating": 8.1,
+    "language": "English",
+    "description": "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years.",
+    "longDescription": "Wes Anderson's most dazzling confectionery: a symmetrical, pastel-hued European caper filled with perfume, stolen Renaissance paintings, and whimsical melancholy. Ralph Fiennes shines with unmatched comic timing as concierge Monsieur Gustave H.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/qcWTuWPu6x6t2MKt0MTfbResJiV.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/9udCLTxTFl28RxnK8Q05E154ZGa.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=1Fg5iWmQjwk",
+    "cast": [
+      {
+        "actorId": "actor_028",
+        "name": "Ralph Fiennes",
+        "role": "M. Gustave",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/3m4n5o6p7q8r9s0t1u2v.jpg"
+      },
+      {
+        "actorId": "actor_029",
+        "name": "Tony Revolori",
+        "role": "Zero Moustafa",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/4n5o6p7q8r9s0t1u2v3w.jpg"
+      },
+      {
+        "actorId": "actor_030",
+        "name": "Saoirse Ronan",
+        "role": "Agatha",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/5o6p7q8r9s0t1u2v3w4x.jpg"
+      }
+    ],
+    "streamingOn": ["Hulu", "Disney+"],
+    "isTopTen": true,
+    "topTenRank": 10,
+    "reviewCount": 2410,
+    "createdAt": "2024-01-10T00:00:00Z"
+  },
+  {
+    "_id": "movie_011",
+    "title": "Spirited Away",
+    "year": 2001,
+    "director": "Hayao Miyazaki",
+    "genre": ["Animation", "Adventure", "Fantasy"],
+    "runtime": 125,
+    "rating": 8.6,
+    "language": "Japanese",
+    "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits.",
+    "longDescription": "Studio Ghibli's crowning achievement and one of the greatest animated films ever made. Hayao Miyazaki weaves an astonishingly layered coming-of-age fable teeming with spirit bathhouses, forgotten names, and Joe Hisaishi's sublime melodic score.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/mSDsSDwaP3E7dEfUPWy4J0djt4O.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=ByXuk9QqQkk",
+    "cast": [
+      {
+        "actorId": "actor_031",
+        "name": "Rumi Hiiragi",
+        "role": "Chihiro Ogino",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/6p7q8r9s0t1u2v3w4x5y.jpg"
+      },
+      {
+        "actorId": "actor_032",
+        "name": "Miyu Irino",
+        "role": "Haku",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/7q8r9s0t1u2v3w4x5y6z.jpg"
+      },
+      {
+        "actorId": "actor_033",
+        "name": "Mari Natsuki",
+        "role": "Yubaba / Zeniba",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/8r9s0t1u2v3w4x5y6z7a.jpg"
+      }
+    ],
+    "streamingOn": ["Max"],
+    "isTopTen": false,
+    "topTenRank": 11,
+    "reviewCount": 3120,
+    "createdAt": "2024-01-11T00:00:00Z"
+  },
+  {
+    "_id": "movie_012",
+    "title": "Mad Max: Fury Road",
+    "year": 2015,
+    "director": "George Miller",
+    "genre": ["Action", "Sci-Fi", "Adventure"],
+    "runtime": 120,
+    "rating": 8.1,
+    "language": "English",
+    "description": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners and a drifter named Max.",
+    "longDescription": "Pure kinetic cinema: two hours of jaw-dropping practical-effects vehicular warfare across a desert inferno. George Miller delivers a masterclass in visual storytelling, relentless editing rhythm, and iconic feminist action.",
+    "posterUrl": "https://image.tmdb.org/t/p/w780/hA2ple9q4qnwxp3hKVNhroipsir.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/nlCHUWjY9XWbuEUQauCBgnY8ymF.jpg",
+    "trailerUrl": "https://www.youtube.com/watch?v=hEJnMQG9ev8",
+    "cast": [
+      {
+        "actorId": "actor_034",
+        "name": "Tom Hardy",
+        "role": "Max Rockatansky",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/yVgfNQ2N5t4O9q0P8t6f4l3h.jpg"
+      },
+      {
+        "actorId": "actor_035",
+        "name": "Charlize Theron",
+        "role": "Imperator Furiosa",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/1p2q3r4s5t6u7v8w9x0y.jpg"
+      },
+      {
+        "actorId": "actor_036",
+        "name": "Nicholas Hoult",
+        "role": "Nux",
+        "imageUrl": "https://image.tmdb.org/t/p/w185/2q3r4s5t6u7v8w9x0y1z.jpg"
+      }
+    ],
+    "streamingOn": ["Max"],
+    "isTopTen": false,
+    "topTenRank": 12,
+    "reviewCount": 2780,
+    "createdAt": "2024-01-12T00:00:00Z"
+  }
 ]

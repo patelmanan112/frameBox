@@ -2,10 +2,10 @@ import Link from "next/link";
 import {
   AtSign,
   Camera,
-  Clapperboard,
   Play,
   ThumbsUp,
 } from "lucide-react";
+import Logo from "@/components/ui/Logo";
 
 const explore = [
   { href: "/", label: "Home" },
@@ -37,9 +37,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Link href="/" className="nav-logo" aria-label="Cineverse home">
-              <Clapperboard size={22} strokeWidth={1.6} aria-hidden="true" />
-              CINEVERSE
+            <Link href="/" className="stream-logo" aria-label="FrameBox home">
+              <Logo size="md" />
             </Link>
             <p>
               An independent journal for people who stay through the credits.
@@ -68,16 +67,16 @@ export default function Footer() {
 
           <div className="footer-col">
             <h4>Contact</h4>
-            <a href="mailto:hello@cineverse.example">hello@cineverse.example</a>
-            <a href="mailto:hello@cineverse.example?subject=Suggest%20a%20title">
+            <a href="mailto:hello@framebox.example">hello@framebox.example</a>
+            <a href="mailto:hello@framebox.example?subject=Suggest%20a%20title">
               Suggest a title
             </a>
-            <a href="mailto:press@cineverse.example">Press enquiries</a>
+            <a href="mailto:press@framebox.example">Press enquiries</a>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span>© {year} Cineverse. All rights reserved.</span>
+          <span>© {year} FrameBox. All rights reserved.</span>
           <div className="footer-socials">
             {socials.map(({ href, label, Icon }) => (
               <a

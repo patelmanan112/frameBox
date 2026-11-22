@@ -8,7 +8,7 @@ import type { Movie } from "@/types";
 export const metadata: Metadata = {
   title: "Films",
   description:
-    "Every film in the Cineverse collection, filterable by genre and sortable by rating, year, or title.",
+    "Every film in the FrameBox collection, filterable by genre and sortable by rating, year, or title.",
 };
 
 type MoviesSearchParams = Promise<{ q?: string | string[] }>;

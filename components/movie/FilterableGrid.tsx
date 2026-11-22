@@ -1,16 +1,17 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Bookmark, Search, SlidersHorizontal, X } from "lucide-react";
 import MovieCard from "@/components/movie/MovieCard";
 import type { Movie } from "@/types";
 
-type SortKey = "rating" | "year" | "title";
+type SortKey = "rating" | "year" | "title" | "runtime";
 
 const sortLabels: Record<SortKey, string> = {
   rating: "Highest rated",
   year: "Newest first",
   title: "Title A–Z",
+  runtime: "Longest runtime",
 };
 
 export default function FilterableGrid({
@@ -23,6 +24,33 @@ export default function FilterableGrid({
   const [genre, setGenre] = useState("All");
   const [sort, setSort] = useState<SortKey>("rating");
   const [query, setQuery] = useState(initialQuery);
+  const [watchlistOnly, setWatchlistOnly] = useState(false);
+  const [watchlist, setWatchlist] = useState<string[]>(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const saved =
+        localStorage.getItem("framebox_watchlist") ||
+        localStorage.getItem("cineverse_watchlist");
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    const handleStorage = () => {
+      try {
+        const saved =
+          localStorage.getItem("framebox_watchlist") ||
+          localStorage.getItem("cineverse_watchlist");
+        if (saved) setWatchlist(JSON.parse(saved));
+      } catch {
+        // ignore
+      }
+    };
+    window.addEventListener("storage", handleStorage);
+    return () => window.removeEventListener("storage", handleStorage);
+  }, []);
 
   const genres = useMemo(
     () => ["All", ...new Set(movies.flatMap((movie) => movie.genre))].sort(
@@ -40,37 +68,60 @@ export default function FilterableGrid({
         movie.title.toLowerCase().includes(needle) ||
         movie.director.toLowerCase().includes(needle) ||
         movie.genre.some((item) => item.toLowerCase().includes(needle));
-      return matchesGenre && matchesQuery;
+      const matchesWatchlist = !watchlistOnly || watchlist.includes(movie._id);
+      return matchesGenre && matchesQuery && matchesWatchlist;
     });
 
     return [...list].sort((a, b) => {
       if (sort === "year") return b.year - a.year;
       if (sort === "title") return a.title.localeCompare(b.title);
+      if (sort === "runtime") return b.runtime - a.runtime;
       return b.rating - a.rating;
     });
-  }, [movies, genre, sort, query]);
+  }, [movies, genre, sort, query, watchlistOnly, watchlist]);
 
   const reset = () => {
     setGenre("All");
     setQuery("");
     setSort("rating");
+    setWatchlistOnly(false);
   };
 
   return (
     <div>
       <div className="filter-bar">
         <div className="filter-chips">
-          {genres.map((item) => (
-            <button
-              key={item}
-              type="button"
-              className={`chip ${genre === item ? "active" : ""}`}
-              aria-pressed={genre === item}
-              onClick={() => setGenre(item)}
-            >
-              {item}
-            </button>
-          ))}
+          {genres.map((item) => {
+            const count =
+              item === "All"
+                ? movies.length
+                : movies.filter((m) => m.genre.includes(item)).length;
+
+            return (
+              <button
+                key={item}
+                type="button"
+                className={`chip ${genre === item ? "active" : ""}`}
+                aria-pressed={genre === item}
+                onClick={() => setGenre(item)}
+              >
+                <span>{item}</span>
+                <span className="chip-count">{count}</span>
+              </button>
+            );
+          })}
+
+          <button
+            type="button"
+            className={`chip chip-watchlist ${watchlistOnly ? "active" : ""}`}
+            onClick={() => setWatchlistOnly((prev) => !prev)}
+            aria-pressed={watchlistOnly}
+            title="Show only movies in your watchlist"
+          >
+            <Bookmark size={13} />
+            <span>Saved</span>
+            <span className="chip-count">{watchlist.length}</span>
+          </button>
         </div>
 
         <div className="filter-controls">
@@ -80,26 +131,41 @@ export default function FilterableGrid({
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search films"
-              aria-label="Search films"
+              placeholder="Filter by title or director..."
+              aria-label="Filter films"
             />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                className="search-clear-btn"
+                aria-label="Clear filter"
+              >
+                <X size={13} />
+              </button>
+            )}
           </label>
-          <select
-            className="select"
-            value={sort}
-            onChange={(event) => setSort(event.target.value as SortKey)}
-            aria-label="Sort films"
-          >
-            <option value="rating">Highest rated</option>
-            <option value="year">Newest first</option>
-            <option value="title">Title A–Z</option>
-          </select>
+
+          <div className="select-wrap">
+            <SlidersHorizontal size={14} className="select-icon" />
+            <select
+              className="select"
+              value={sort}
+              onChange={(event) => setSort(event.target.value as SortKey)}
+              aria-label="Sort films"
+            >
+              <option value="rating">Highest rated</option>
+              <option value="year">Newest first</option>
+              <option value="title">Title A–Z</option>
+              <option value="runtime">Longest runtime</option>
+            </select>
+          </div>
         </div>
       </div>
 
       <div className="results-meta">
         <span>
-          {filtered.length} {filtered.length === 1 ? "film" : "films"}
+          Showing <strong>{filtered.length}</strong> {filtered.length === 1 ? "film" : "films"}
         </span>
         <span>Sorted by {sortLabels[sort].toLowerCase()}</span>
       </div>
@@ -114,7 +180,7 @@ export default function FilterableGrid({
         <div className="empty-state">
           <div className="empty-title">Nothing in this frame</div>
           <p className="empty-text">
-            No films match those filters. Try a different genre or title.
+            No films match those filters. Try selecting another genre or resetting your query.
           </p>
           <button
             type="button"

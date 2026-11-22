@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Genres",
   description:
-    "Browse the Cineverse collection by genre, from drama and science fiction to crime, romance, and satire.",
+    "Browse the FrameBox collection by genre, from drama and science fiction to crime, romance, and satire.",
 };
 
 export default function GenresPage() {

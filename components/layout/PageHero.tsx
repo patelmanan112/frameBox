@@ -21,15 +21,17 @@ export default function PageHero({
             src={image}
             alt=""
             fill
+            priority
             sizes="100vw"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", objectPosition: "center 25%" }}
           />
+          <div className="page-hero-shade" />
         </div>
       ) : null}
       <div className="container page-hero-content">
-        <p className="page-kicker">{kicker}</p>
-        <h1 className="page-title">{title}</h1>
-        <p className="page-sub">{subtitle}</p>
+        <span className="page-hero-kicker">{kicker}</span>
+        <h1 className="page-hero-title">{title}</h1>
+        <p className="page-hero-sub">{subtitle}</p>
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import { getAllSeries } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Series",
   description:
-    "Every series in the Cineverse collection, filterable by genre and status.",
+    "Every series in the FrameBox collection, filterable by genre and status.",
 };
 
 export default function SeriesPage() {

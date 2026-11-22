@@ -9,7 +9,7 @@ import { getTopTenMovies, getTopTenSeries } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Top Rated",
   description:
-    "The ten films and ten series ranked highest by Cineverse critics and readers.",
+    "The ten films and ten series ranked highest by FrameBox critics and readers.",
 };
 
 type TopRatedSearchParams = Promise<{ type?: string | string[] }>;

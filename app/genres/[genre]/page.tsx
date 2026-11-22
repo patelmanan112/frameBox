@@ -27,7 +27,7 @@ export async function generateMetadata({
 
   return {
     title: name,
-    description: `Films and series in the ${name} genre, curated by Cineverse.`,
+    description: `Films and series in the ${name} genre, curated by FrameBox.`,
   };
 }
 

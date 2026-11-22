@@ -6,14 +6,6 @@ import Footer from "@/components/layout/Footer";
 import { getSearchItems } from "@/lib/data";
 import "./globals.css";
 
-const instrument = localFont({
-  src: "./fonts/instrument-serif.woff2",
-  weight: "400",
-  variable: "--font-instrument",
-  display: "swap",
-  fallback: ["Georgia", "Times New Roman", "serif"],
-});
-
 const inter = localFont({
   src: "./fonts/inter.woff2",
   weight: "100 900",
@@ -27,12 +19,12 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ),
   title: {
-    default: "Cineverse — Where Every Frame Matters",
-    template: "%s — Cineverse",
+    default: "FrameBox — Where Every Frame Matters",
+    template: "%s — FrameBox",
   },
   description:
-    "Cineverse is an independent film and television journal. Discover curated reviews, rankings, and the stories behind the frames.",
-  applicationName: "Cineverse",
+    "FrameBox is an independent film and television journal. Discover curated reviews, rankings, and the stories behind the frames.",
+  applicationName: "FrameBox",
   keywords: [
     "cinema",
     "film reviews",
@@ -40,13 +32,13 @@ export const metadata: Metadata = {
     "top ten",
     "movie rankings",
   ],
-  authors: [{ name: "Cineverse Editorial" }],
+  authors: [{ name: "FrameBox Editorial" }],
   openGraph: {
-    title: "Cineverse — Where Every Frame Matters",
+    title: "FrameBox — Where Every Frame Matters",
     description:
       "Curated reviews, rankings, and the stories behind the frames.",
     type: "website",
-    siteName: "Cineverse",
+    siteName: "FrameBox",
   },
 };
 
@@ -57,7 +49,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${instrument.variable} ${inter.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <body className="site-body">
         <Suspense fallback={<header className="navbar" />}>
           <Navbar items={getSearchItems()} />
